@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/IMS.Plugins/">
+    <Project Path="IMS.Plugins/IMS.Plugins.InMemory/IMS.Plugins.InMemory.csproj" Id="004a04a9-c2d7-4152-a0df-dbcb8cebcb7e" />
+  </Folder>
+  <Project Path="IMS.CoreBusiness/IMS.CoreBusiness.csproj" Id="f59ecde5-734a-4ccc-ae83-3b35677e3131" />
+  <Project Path="IMS.UseCases/IMS.UseCases.csproj" Id="e44468f4-4c16-4817-8a47-19b707495ec7" />
+  <Project Path="IMS.WebApp/IMS.WebApp.csproj" />
+</Solution>
