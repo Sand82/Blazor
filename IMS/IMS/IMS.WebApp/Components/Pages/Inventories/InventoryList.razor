@@ -5,11 +5,19 @@
 <br />
 <br />
 
-<InventoryListComponent />
+<SearchComponent OnSearch="HandleSearch"></SearchComponent>
 <br />
 
+<InventoryListComponent SearchInventoryFilter="@inventoryNameToSearch" />
+<br />
 <a class="btn btn-primary" href="addinventory">Add Inventory</a>
 
 @code {
 
+    private string inventoryNameToSearch;
+
+    private void HandleSearch(string searchFilter)
+    {
+       inventoryNameToSearch = searchFilter;
+    }
 }

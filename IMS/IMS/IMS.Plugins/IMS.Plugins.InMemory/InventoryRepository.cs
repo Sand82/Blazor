@@ -40,10 +40,10 @@ public class InventoryRepository : IInventoryRepository
             x.InventoryName.Equals(inventory.InventoryName, 
             StringComparison.OrdinalIgnoreCase)))
         {
-            return Task.CompletedTask;
+            return;
         }
 
-        var existingInventory = await GetInventoryByIdAsync(inventory.InventoryId);
+        Inventory? existingInventory = await GetInventoryByIdAsync(inventory.InventoryId);
 
         if (existingInventory != null)
         {
@@ -65,7 +65,7 @@ public class InventoryRepository : IInventoryRepository
         return await Task.FromResult(this.inventories.Where(i => i.InventoryName.Contains(name, StringComparison.OrdinalIgnoreCase)));
     }    
 
-    public Task<Inventory> GetInventoryByIdAsync(int inventoryId)
+    public Task<Inventory?> GetInventoryByIdAsync(int inventoryId)
     {
         return Task.FromResult(this.inventories.FirstOrDefault(x => x.InventoryId == inventoryId));
     }

@@ -1,5 +1,77 @@
 ﻿@page "/not-found"
 @layout MainLayout
 
-<h3>Not Found</h3>
-<p>Sorry, the content you are looking for does not exist.</p>
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <div class="display-4 text-danger">404</div>
+        <h2 class="fw-bold">Page not found</h2>
+        <p class="text-muted">We couldn't find the page you were looking for.</p>
+    </div>
+
+    <div class="card mx-auto" style="max-width:900px;">
+        <div class="card-body">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-8">
+                    <p class="mb-1"><strong>Requested path:</strong> <code>@AttemptedPath</code></p>
+                    <p class="text-muted mb-2">Try one of the options below or contact support if you believe this is an error.</p>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-primary" @onclick="GoHome">Home</button>
+                        <button class="btn btn-outline-primary" @onclick="GoInventories">Inventories</button>
+                        <button class="btn btn-outline-secondary" @onclick="GoAddInventory">Add inventory</button>
+                        
+                        <a class="btn btn-link text-danger" href="mailto:support@example.com?subject=Broken%20link&body=@Uri.EscapeDataString(AttemptedPath)">Report issue</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label visually-hidden" for="siteSearch">Search site</label>
+                    <div class="input-group">
+                        <input id="siteSearch" class="form-control" placeholder="Search the site..." @bind="Query" />
+                        <button class="btn btn-outline-success" @onclick="Search">Search</button>
+                    </div>
+                    <small class="text-muted d-block mt-2">Quick search for products, inventories or pages.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string AttemptedPath { get; set; } = "/";
+    private string Query { get; set; } = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        AttemptedPath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        if (string.IsNullOrWhiteSpace(AttemptedPath))
+        {
+            AttemptedPath = "/";
+        }
+    }
+
+    private void GoHome() => NavigationManager.NavigateTo("/");
+
+    private void GoInventories() => NavigationManager.NavigateTo("/inventories");
+
+    private void GoAddInventory() => NavigationManager.NavigateTo("/addinventory");
+    
+    //private ValueTask GoBack() => JSRuntime.InvokeVoidAsync("history.back");
+
+    private void Search()
+    {
+        if (string.IsNullOrWhiteSpace(Query))
+        {
+            // fallback to home if nothing provided
+            NavigationManager.NavigateTo("/");
+            return;
+        }
+
+        // Navigate to a simple search route; adjust route if your app uses a different search path
+        var target = $"/search?q={Uri.EscapeDataString(Query)}";
+        NavigationManager.NavigateTo(target);
+    }
+}

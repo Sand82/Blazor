@@ -1,58 +1,72 @@
-﻿@page "/inventories/edit/{InventoryId:int}"
+﻿@page "/editinventory/{invId:int}"
 
 @inject NavigationManager NavigationManager
+@inject IViewInventoryByIdUseCase ViewInventoryByIdUseCase
 @inject IEditInventoryUseCase EditInventoryUseCase
 
 <h3>Edit Inventory</h3>
 
 <br/>
 
-<EditForm Model="inventory" FormName="formInventory" OnValidSubmit="Save"> 
-    <DataAnnotationsValidator/>
-    <div class="form-group">
-        <label for="name">Inventory Name</label>
-        <InputText id="name" @bind-Value="inventory.InventoryName" class="form-control" />
-        <ValidationMessage For="() => inventory.InventoryName"></ValidationMessage>
-    </div>
-    <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <InputNumber id="quantity" @bind-Value="inventory.Quantity" class="form-control"/>
-        <ValidationMessage For="() => inventory.Quantity"></ValidationMessage>
-    </div>
-    <div class="form-group">
-        <label for="price">Price</label>
-        <InputNumber id="price" @bind-Value="inventory.Price" class="form-control"/>    
-        <ValidationMessage For="() => inventory.Price"></ValidationMessage>
-    </div>
+@if (inventory is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+   <EditForm Model="inventory" FormName="formInventory" OnValidSubmit="Update"> 
+       <DataAnnotationsValidator/>
 
-    <br/>
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a type="button" class="btn btn-secondary" href="/inventories">Cancel</a>
-</EditForm> 
+       <InputNumber @bind-Value="inventory.InventoryId" hidden></InputNumber>
+
+       <div class="form-group">
+           <label for="name">Inventory Name</label>
+           <InputText id="name" @bind-Value="inventory.InventoryName" class="form-control" />
+           <ValidationMessage For="() => inventory.InventoryName"></ValidationMessage>
+       </div>
+       <div class="form-group">
+           <label for="quantity">Quantity</label>
+           <InputNumber id="quantity" @bind-Value="inventory.Quantity" class="form-control"/>
+           <ValidationMessage For="() => inventory.Quantity"></ValidationMessage>
+       </div>
+       <div class="form-group">
+           <label for="price">Price</label>
+           <InputNumber id="price" @bind-Value="inventory.Price" class="form-control"/>    
+           <ValidationMessage For="() => inventory.Price"></ValidationMessage>
+       </div>
+
+       <br/>
+       <button type="submit" class="btn btn-primary">Update</button>
+       <a type="button" class="btn btn-secondary" href="/inventories">Cancel</a>
+   </EditForm> 
+}
 
 @code {
 
-    [SupplyParameterFromForm]
-    private Inventory inventory { get; set; } 
-
     [Parameter]
-    public int InventoryId { get; set; }
+    public int invId { get; set; }
 
+    [SupplyParameterFromForm]
+    private Inventory? inventory { get; set; }  
 
-    protected override async Task OnInitializedAsync()
-    {
-        if(InventoryId != null)
+    protected override async Task OnParametersSetAsync()
+    {  
+        this.inventory ??= await ViewInventoryByIdUseCase.ExecuteAsync(invId);   
+        
+         if (this.inventory is null)
         {
-            inventory = await EditInventoryUseCase.FindInventoryByIdAsync(int.Parse(InventoryId.ToString()));
+            NavigationManager.NotFound();            
+        }
+
+    }
+
+    private async Task Update()
+    {       
+
+        if (inventory is not null) 
+        {
+            await EditInventoryUseCase.ExecuteAsync(inventory);
+            NavigationManager.NavigateTo("/inventories");
         }
     }
-
-    private async Task Save()
-    {
-       inventory.InventoryId = InventoryId;
-
-       await EditInventoryUseCase.ExecuteAsync(inventory);
-       NavigationManager.NavigateTo("/inventories");
-    }
-
 }

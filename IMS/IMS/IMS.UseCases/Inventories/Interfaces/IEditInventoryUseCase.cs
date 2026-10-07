@@ -1,11 +1,8 @@
 ﻿using IMS.CoreBusiness;
 
-namespace IMS.UseCases.Inventories.Interfaces
-{
-    public interface IEditInventoryUseCase
-    {
-        Task ExecuteAsync(Inventory inventory);
+namespace IMS.UseCases.Inventories.Interfaces;
 
-        Task<Inventory> FindInventoryByIdAsync(int inventoryId);
-    }
+public interface IEditInventoryUseCase
+{
+    Task ExecuteAsync(Inventory inventory);        
 }

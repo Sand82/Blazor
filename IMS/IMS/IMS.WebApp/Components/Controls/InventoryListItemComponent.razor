@@ -6,7 +6,8 @@
         <td>@Inventory.Quantity</td>  
         <td>@Inventory.Price.ToString("C")</td>  
         <td>
-            <a type="button" class="btn btn-light" href="/inventories/edit/@Inventory.InventoryId">Edit</a>
+            <a type="button" class="btn btn-light" href="/editinventory/@Inventory.InventoryId">Edit</a>
+            <Button type="button" class="btn btn-danger" href="/editinventories">Delete</Button>
         </td>  
     </tr>
 }
