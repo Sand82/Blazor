@@ -1,0 +1,23 @@
+﻿@page "/products"
+
+<h3>Product List</h3>
+
+<br />
+<br />
+
+<SearchComponent OnSearch="HandleSearch"></SearchComponent>
+<br />
+
+<ProductListComponent SearchProductFilter="@ProductNameToSearch" />
+<br />
+<a class="btn btn-primary" href="addproduct">Add Product</a>
+
+@code {
+
+    private string ProductNameToSearch;
+
+    private void HandleSearch(string searchFilter)
+    {
+       ProductNameToSearch = searchFilter;
+    }
+}

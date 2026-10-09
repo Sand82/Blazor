@@ -8,5 +8,5 @@ public interface IInventoryRepository
     Task AddInventoryAsync(Inventory inventory);
     Task EditInventoryAsync(Inventory inventory);
     Task<Inventory?> GetInventoryByIdAsync(int inventoryId);
-    Task DeleteInventoryAsync(int inventoryId);
+    Task DeleteInventoryByIdAsync(int inventoryId);
 }

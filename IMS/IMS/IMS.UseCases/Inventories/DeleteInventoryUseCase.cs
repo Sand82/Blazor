@@ -1,9 +1,9 @@
-﻿using IMS.CoreBusiness;
+﻿using IMS.UseCases.Inventories.Interfaces;
 using IMS.UseCases.PluginInterfaces;
 
 namespace IMS.UseCases.Inventories;
 
-public class DeleteInventoryUseCase
+public class DeleteInventoryUseCase : IDeleteInventoryUseCase
 {
     private readonly IInventoryRepository inventoryRepository;
 
@@ -14,6 +14,6 @@ public class DeleteInventoryUseCase
 
     public async Task ExecuteAsync(int inventoryId)
     {
-        await this.inventoryRepository.DeleteInventoryAsync(inventoryId);
+        await this.inventoryRepository.DeleteInventoryByIdAsync(inventoryId);
     }
 }

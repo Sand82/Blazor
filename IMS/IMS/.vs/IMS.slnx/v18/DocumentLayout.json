@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{004A04A9-C2D7-4152-A0DF-DBCB8CEBCB7E}|IMS.Plugins\\IMS.Plugins.InMemory\\IMS.Plugins.InMemory.csproj|c:\\users\\astefanov9\\desktop\\ims\\ims\\ims.plugins\\ims.plugins.inmemory\\inventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{004A04A9-C2D7-4152-A0DF-DBCB8CEBCB7E}|IMS.Plugins\\IMS.Plugins.InMemory\\IMS.Plugins.InMemory.csproj|solutionrelative:ims.plugins\\ims.plugins.inmemory\\inventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E44468F4-4C16-4817-8A47-19B707495EC7}|IMS.UseCases\\IMS.UseCases.csproj|c:\\users\\astefanov9\\desktop\\ims\\ims\\ims.usecases\\inventories\\editinventoryusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E44468F4-4C16-4817-8A47-19B707495EC7}|IMS.UseCases\\IMS.UseCases.csproj|solutionrelative:ims.usecases\\inventories\\editinventoryusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED317642-421B-C368-96DC-E39DC34EDB37}|IMS.WebApp\\IMS.WebApp.csproj|c:\\users\\astefanov9\\desktop\\ims\\ims\\ims.webapp\\components\\pages\\products\\addproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED317642-421B-C368-96DC-E39DC34EDB37}|IMS.WebApp\\IMS.WebApp.csproj|solutionrelative:ims.webapp\\components\\pages\\products\\addproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "InventoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\IMS.Plugins\\IMS.Plugins.InMemory\\InventoryRepository.cs",
-              "RelativeDocumentMoniker": "IMS.Plugins\\IMS.Plugins.InMemory\\InventoryRepository.cs",
-              "ToolTip": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\IMS.Plugins\\IMS.Plugins.InMemory\\InventoryRepository.cs",
-              "RelativeToolTip": "IMS.Plugins\\IMS.Plugins.InMemory\\InventoryRepository.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAACgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T14:21:25.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EditInventoryUseCase.cs",
-              "DocumentMoniker": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\IMS.UseCases\\Inventories\\EditInventoryUseCase.cs",
-              "RelativeDocumentMoniker": "IMS.UseCases\\Inventories\\EditInventoryUseCase.cs",
-              "ToolTip": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\IMS.UseCases\\Inventories\\EditInventoryUseCase.cs",
-              "RelativeToolTip": "IMS.UseCases\\Inventories\\EditInventoryUseCase.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T13:55:57.786Z",
+              "Title": "AddProduct.razor",
+              "DocumentMoniker": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\IMS.WebApp\\Components\\Pages\\Products\\AddProduct.razor",
+              "RelativeDocumentMoniker": "IMS.WebApp\\Components\\Pages\\Products\\AddProduct.razor",
+              "ToolTip": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\IMS.WebApp\\Components\\Pages\\Products\\AddProduct.razor",
+              "RelativeToolTip": "IMS.WebApp\\Components\\Pages\\Products\\AddProduct.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-09T09:58:59.922Z",
               "EditorCaption": ""
             }
           ]

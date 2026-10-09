@@ -1,0 +1,35 @@
+﻿@inject IDeleteProductUseCase DeleteProductUseCase
+
+@if (this.Product != null)
+{    
+    <tr>
+        <td>@Product.ProductName</td>
+        <td>@Product.Quantity</td>  
+        <td>@Product.Price.ToString("C")</td>  
+        <td>
+            <a type="button" class="btn btn-light" href="/editproduct/@Product.ProductId">Edit</a>  
+        </td>  
+        <td>
+            <button 
+                type="button" 
+                class="btn btn-danger"
+                @onclick="async () => { await DeleteProduct(Product.ProductId); }"
+            >
+            Delete
+            </button>
+            
+        </td>
+    </tr>
+}
+
+@code {
+
+    [Parameter]
+    public Product? Product { get; set; }
+
+    private async Task DeleteProduct(int ProductId)
+    {
+        await DeleteProductUseCase.ExecuteAsync(ProductId);
+        this.Product = null;        
+    }
+}

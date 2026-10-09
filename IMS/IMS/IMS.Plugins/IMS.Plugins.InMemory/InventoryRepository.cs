@@ -18,6 +18,21 @@ public class InventoryRepository : IInventoryRepository
         };
     }
 
+    public async Task<IEnumerable<Inventory>> GetInventoriesByNameAsync(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return await Task.FromResult(inventories.AsEnumerable());
+        }
+
+        return await Task.FromResult(this.inventories.Where(i => i.InventoryName.Contains(name, StringComparison.OrdinalIgnoreCase)));
+    }
+
+    public Task<Inventory?> GetInventoryByIdAsync(int inventoryId)
+    {
+        return Task.FromResult(this.inventories.FirstOrDefault(x => x.InventoryId == inventoryId));
+    }
+
     public Task AddInventoryAsync(Inventory inventory)
     {
         if (this.inventories.Any(x => x.InventoryName.Equals(inventory.InventoryName, StringComparison.OrdinalIgnoreCase)))
@@ -30,7 +45,7 @@ public class InventoryRepository : IInventoryRepository
 
         inventories.Add(inventory);
         return Task.CompletedTask;
-    }
+    }        
 
     public async Task EditInventoryAsync(Inventory inventory)
     {
@@ -55,18 +70,13 @@ public class InventoryRepository : IInventoryRepository
         return;
     }
 
-    public async Task<IEnumerable<Inventory>> GetInventoriesByNameAsync(string name)
+    public Task DeleteInventoryByIdAsync(int inventoryId)
     {
-        if ( string.IsNullOrWhiteSpace(name))
+       var inventory = inventories.FirstOrDefault(x => x.InventoryId == inventoryId);
+        if (inventory != null)
         {
-            return await Task.FromResult(inventories.AsEnumerable());
+            inventories.Remove(inventory);
         }
-
-        return await Task.FromResult(this.inventories.Where(i => i.InventoryName.Contains(name, StringComparison.OrdinalIgnoreCase)));
+        return Task.CompletedTask;
     }    
-
-    public Task<Inventory?> GetInventoryByIdAsync(int inventoryId)
-    {
-        return Task.FromResult(this.inventories.FirstOrDefault(x => x.InventoryId == inventoryId));
-    }
 }
