@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\",
+  "WorkspaceRootPath": "C:\\Programing\\Blazor\\IMS\\IMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED317642-421B-C368-96DC-E39DC34EDB37}|IMS.WebApp\\IMS.WebApp.csproj|c:\\users\\astefanov9\\desktop\\ims\\ims\\ims.webapp\\components\\pages\\products\\addproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ED317642-421B-C368-96DC-E39DC34EDB37}|IMS.WebApp\\IMS.WebApp.csproj|solutionrelative:ims.webapp\\components\\pages\\products\\addproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ED317642-421B-C368-96DC-E39DC34EDB37}|IMS.WebApp\\IMS.WebApp.csproj|c:\\programing\\blazor\\ims\\ims\\ims.webapp\\components\\controls\\searchproductinventorycomponent.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ED317642-421B-C368-96DC-E39DC34EDB37}|IMS.WebApp\\IMS.WebApp.csproj|solutionrelative:ims.webapp\\components\\controls\\searchproductinventorycomponent.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED317642-421B-C368-96DC-E39DC34EDB37}|IMS.WebApp\\IMS.WebApp.csproj|c:\\programing\\blazor\\ims\\ims\\ims.webapp\\components\\controls\\searchproductinventorycomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED317642-421B-C368-96DC-E39DC34EDB37}|IMS.WebApp\\IMS.WebApp.csproj|solutionrelative:ims.webapp\\components\\controls\\searchproductinventorycomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AddProduct.razor",
-              "DocumentMoniker": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\IMS.WebApp\\Components\\Pages\\Products\\AddProduct.razor",
-              "RelativeDocumentMoniker": "IMS.WebApp\\Components\\Pages\\Products\\AddProduct.razor",
-              "ToolTip": "C:\\Users\\astefanov9\\Desktop\\IMS\\IMS\\IMS.WebApp\\Components\\Pages\\Products\\AddProduct.razor",
-              "RelativeToolTip": "IMS.WebApp\\Components\\Pages\\Products\\AddProduct.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "SearchProductInventoryComponent.razor.css",
+              "DocumentMoniker": "C:\\Programing\\Blazor\\IMS\\IMS\\IMS.WebApp\\Components\\Controls\\SearchProductInventoryComponent.razor.css",
+              "RelativeDocumentMoniker": "IMS.WebApp\\Components\\Controls\\SearchProductInventoryComponent.razor.css",
+              "ToolTip": "C:\\Programing\\Blazor\\IMS\\IMS\\IMS.WebApp\\Components\\Controls\\SearchProductInventoryComponent.razor.css",
+              "RelativeToolTip": "IMS.WebApp\\Components\\Controls\\SearchProductInventoryComponent.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-10-11T07:29:08.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SearchProductInventoryComponent.razor",
+              "DocumentMoniker": "C:\\Programing\\Blazor\\IMS\\IMS\\IMS.WebApp\\Components\\Controls\\SearchProductInventoryComponent.razor",
+              "RelativeDocumentMoniker": "IMS.WebApp\\Components\\Controls\\SearchProductInventoryComponent.razor",
+              "ToolTip": "C:\\Programing\\Blazor\\IMS\\IMS\\IMS.WebApp\\Components\\Controls\\SearchProductInventoryComponent.razor",
+              "RelativeToolTip": "IMS.WebApp\\Components\\Controls\\SearchProductInventoryComponent.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-09T09:58:59.922Z",
+              "WhenOpened": "2026-10-10T14:04:20.815Z",
               "EditorCaption": ""
             }
           ]
