@@ -28,7 +28,7 @@
 
     <div class="form-group">
         <label for="inventory">Inventories</label>
-        <SearchProductInventoryComponent />
+        <SearchProductInventoryComponent OnInventorySelected="HandleInventorySelected" />
     </div>
 
     <br/>
@@ -44,5 +44,10 @@
     {
        await AddProductUseCase.ExecuteAsync(product);
        NavigationManager.NavigateTo("/products");
+    }
+
+    private void HandleInventorySelected(Inventory inventory)
+    {        
+        product.AddInventory(inventory);
     }
 }
